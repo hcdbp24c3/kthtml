@@ -1,10 +1,12 @@
-window.onscroll = function () {
-  var header = document.getElementById("myHeader");
+document.addEventListener("DOMContentLoaded", () => {
+  const header = document.getElementById("myHeader");
 
-  // Nếu scroll xuống hơn 100px
-  if (window.pageYOffset > 100) {
-    header.classList.add("scrolled");
-  } else {
-    header.classList.remove("scrolled");
-  }
-};
+  window.addEventListener("scroll", () => {
+    // Sử dụng window.scrollY thay vì pageYOffset (chuẩn hiện đại hơn)
+    if (window.scrollY > 100) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+  });
+});
