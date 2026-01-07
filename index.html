@@ -34,22 +34,29 @@
             padding: 10px 10%;
         }
 
-        .logo h1 {
-            font-size: 24px;
+        .logo img {
+            width: 80px; 
+            height: 80px; /* Chiều cao bằng chiều rộng để tạo hình vuông */
+            border-radius: 50%; /* Bo góc 50% để thành hình tròn */
+            object-fit: cover; /* Đảm bảo hình không bị méo */
+            display: block;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
         }
 
         nav ul {
             display: flex;
             list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 20px;
+            gap: 30px; /* Dùng gap cho hiện đại và dễ chỉnh */
         }
 
         nav ul li a {
             color: white;
             text-decoration: none;
+            font-weight: bold;
         }
 
         /* Main Content */
@@ -108,7 +115,7 @@
 
     <header id="myHeader">
         <div class="logo">
-            <h1>MyLogo</h1>
+            <img src="logo.png" alt="logo">
         </div>
         <nav>
             <ul>
