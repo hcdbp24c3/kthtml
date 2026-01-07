@@ -8,7 +8,7 @@
 
 body {
   /* Đưa background ra toàn trang web */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+  background-image: linear-gradient(rgba(0, 50, 20, 0.7), rgba(0, 30, 20, 0.7)),
     url("hero-bg.png");
   background-size: cover;
   background-position: center;
@@ -32,7 +32,7 @@ header {
 }
 
 .scrolled {
-  background-color: #ff5722;
+  background-color: #2e7d32; /* Màu xanh lá đậm khi scroll */
   padding: 5px 10%; /* Nhỏ hơn nữa khi cuộn */
 }
 
@@ -144,7 +144,7 @@ main {
 
 .contact-form button {
   padding: 12px;
-  background-color: #ff5722;
+  background-color: #4caf50; /* Xanh lá tươi */
   color: white;
   border: none;
   border-radius: 5px;
@@ -153,7 +153,7 @@ main {
 }
 
 .contact-form button:hover {
-  background-color: #e64a19;
+  background-color: #388e3c; /* Xanh lá đậm khi hover */
 }
 
 footer {
