@@ -3,113 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang Dịch Vụ Đơn Giản</title>
-    <style>
-        /* CSS Cơ bản */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        /* 1. Header dùng Flexbox */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            display: flex;
-            justify-content: space-between; /* Logo 1 bên, Menu 1 bên */
-            align-items: center;
-            padding: 20px 10%;
-            background-color: #333;
-            color: white;
-            transition: 0.4s; /* Hiệu ứng đổi màu mượt */
-            z-index: 1000;
-        }
-
-        /* Class này sẽ được JS thêm vào khi scroll */
-        .scrolled {
-            background-color: #ff5722; /* Đổi sang màu cam khi scroll */
-            padding: 10px 10%;
-        }
-
-        .logo img {
-            width: 80px; 
-            height: 80px; /* Chiều cao bằng chiều rộng để tạo hình vuông */
-            border-radius: 50%; /* Bo góc 50% để thành hình tròn */
-            object-fit: cover; /* Đảm bảo hình không bị méo */
-            display: block;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 30px; /* Dùng gap cho hiện đại và dễ chỉnh */
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        /* Main Content */
-        main {
-            margin-top: 100px; /* Để không bị header che mất */
-            padding: 20px 10%;
-        }
-
-        .intro {
-            text-align: center;
-            padding: 50px 0;
-            background-color: #f4f4f4;
-            margin-bottom: 30px;
-        }
-
-        /* 2. CSS Grid cho Danh sách dịch vụ */
-        .services-grid {
-            display: grid;
-            gap: 20px;
-            /* Mặc định trên Desktop: 3 cột */
-            grid-template-columns: repeat(3, 1fr);
-        }
-
-        .service-item {
-            border: 1px solid #ddd;
-            padding: 20px;
-            text-align: center;
-            border-radius: 8px;
-        }
-
-        /* Responsive */
-        /* Tablet: 2 cột */
-        @media (max-width: 992px) {
-            .services-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        /* Mobile: 1 cột */
-        @media (max-width: 600px) {
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 50px;
-        }
-    </style>
+    <title>Trang Dịch Vụ - Full Background</title>
+    <!-- Nhúng file CSS riêng -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -120,8 +16,8 @@
         <nav>
             <ul>
                 <li><a href="#">Trang chủ</a></li>
-                <li><a href="#">Dịch vụ</a></li>
-                <li><a href="#">Liên hệ</a></li>
+                <li><a href="#services">Dịch vụ</a></li>
+                <li><a href="#contact">Liên hệ</a></li>
             </ul>
         </nav>
     </header>
@@ -129,11 +25,11 @@
     <main>
         <section class="intro">
             <h1>Chào mừng đến với website của tôi</h1>
-            <p>Đây là demo về Flexbox và CSS Grid.</p>
+            <p>Đây là giao diện với background toàn trang và bố cục chia file.</p>
         </section>
 
-        <section>
-            <h2 style="margin-bottom: 20px;">Danh sách dịch vụ</h2>
+        <section id="services">
+            <h2 style="margin-bottom: 20px; text-align: center;">Danh sách dịch vụ</h2>
             <div class="services-grid">
                 <div class="service-item">
                     <h3>Dịch vụ 1</h3>
@@ -162,9 +58,15 @@
             </div>
         </section>
 
-        <!-- Thêm khoảng trống để có thể scroll -->
-        <section style="height: 1000px; padding-top: 50px;">
-            <p>Cuộn xuống để xem Header đổi màu...</p>
+        <section id="contact" class="contact">
+            <h2>Liên hệ với chúng tôi</h2>
+            <p style="margin-bottom: 20px;">Để lại thông tin để được tư vấn miễn phí.</p>
+            <form class="contact-form">
+                <input type="text" placeholder="Họ và tên" required>
+                <input type="email" placeholder="Email của bạn" required>
+                <textarea rows="5" placeholder="Nội dung cần tư vấn" required></textarea>
+                <button type="submit">Gửi tin nhắn</button>
+            </form>
         </section>
     </main>
 
@@ -172,19 +74,8 @@
         <p>&copy; 2024 Website của tôi</p>
     </footer>
 
-    <!-- 3. Javascript đổi màu Header khi scroll -->
-    <script>
-        window.onscroll = function() {
-            var header = document.getElementById("myHeader");
-            
-            // Nếu scroll xuống hơn 100px
-            if (window.pageYOffset > 100) {
-                header.classList.add("scrolled");
-            } else {
-                header.classList.remove("scrolled");
-            }
-        };
-    </script>
+    <!-- Nhúng file JS riêng -->
+    <script src="script.js"></script>
 
 </body>
 </html>
